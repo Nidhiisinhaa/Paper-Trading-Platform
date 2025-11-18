@@ -7,6 +7,9 @@ function MarketOrder() {
         <div class="col">
             <input type="number" disabled class="form-control" placeholder="123.45" aria-label="Last name"/>
         </div>
+        <div class="col">
+            <input type="number" class="form-control" placeholder="Stop Loss" aria-label="Last name"/>
+        </div>
     </div> );
 }
 

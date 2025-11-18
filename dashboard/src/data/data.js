@@ -191,3 +191,47 @@ export const positions = [
     isLoss: true,
   },
 ];
+
+
+export const transactionHistory = [
+  {
+    id: "TXN1001",
+    date: "2025-01-12 10:23:45",
+    type: "funds_added",         // or "withdrawal"
+    amount: 5000,
+    status: "successful",        // pending / failed / successful
+    refNo: "DUMMY12987342",      // dummy reference id
+    balanceAfter: 15000,
+    remarks: "Dummy funds added"
+  },
+  {
+    id: "TXN1002",
+    date: "2025-01-15 14:55:12",
+    type: "withdrawal",
+    amount: 2000,
+    status: "pending",
+    refNo: "DUMMY5432378",
+    balanceAfter: 13000,
+    remarks: "Withdrawal initiated (paper mode)"
+  },
+  {
+    id: "TXN1003",
+    date: "2025-01-17 09:11:32",
+    type: "funds_added",
+    amount: 10000,
+    status: "successful",
+    refNo: "DUMMY40981273",
+    balanceAfter: 23000,
+    remarks: "Funds added for paper trading"
+  },
+  {
+    id: "TXN1004",
+    date: "2025-01-19 18:02:10",
+    type: "withdrawal",
+    amount: 5000,
+    status: "failed",
+    refNo: "DUMMY9081231",
+    balanceAfter: 23000,          // unchanged due to failure
+    remarks: "Withdrawal failed (test case)"
+  }
+]

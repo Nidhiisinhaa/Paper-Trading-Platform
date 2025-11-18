@@ -1,5 +1,10 @@
+import FundsLower from "./FundsComponents/FundsLower";
+import FundsUpper from "./FundsComponents/FundsUpper";
 function Funds() {
-    return (<h1>Funds</h1> );
+    return (<>
+    <FundsUpper/>
+    <FundsLower/>
+    </>);
 }
 
 export default Funds;

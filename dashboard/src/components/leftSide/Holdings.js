@@ -1,9 +1,43 @@
 import {holdings} from "../../data/data"
+import { DoughnutChart } from "../graphs/Doughnut";
 import "./Holdings.css";
 function Holdings() {
-    console.log(holdings)
-    return (<div className="container" style={{paddingTop:"5%"}}>
+    // console.log(holdings)
+    const data = {
+      labels: holdings.map(holding=>holding["name"]),
+      datasets: [
+        {
+          label: '# of Votes',
+          data:holdings.map(holding=>holding["price"]),
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.5)',
+            'rgba(54, 162, 235, 0.5)',
+            'rgba(255, 206, 86, 0.5)',
+            'rgba(75, 192, 192, 0.5)',
+            'rgba(153, 102, 255, 0.5)',
+            'rgba(255, 159, 64, 0.5)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+          ],
+          borderWidth: 1,
+        },
+      ],
+    };
+    
+    return (
+
+    <div className="container" style={{paddingTop:"5%"}}>
         <h2 style={{fontWeight:"100"}} className="mb-3">Holdings({holdings.length})</h2>
+        <div className="container" style={{padding:"5rem", paddingTop:"2rem"}}>
+
+        <DoughnutChart data={data}></DoughnutChart>
+        </div>
   
         <div className="table-responsive-sm hide-x" style={{marginBottom:"3%"}}>
 
@@ -21,17 +55,7 @@ function Holdings() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* <tr>
-                        <td><span className="font-100">  Mark </span></td>
-                        <td><span className="font-100">  Otto </span></td>
-                        <td><span className="font-100">  Otto </span></td>
-                        <td><span className="font-100">  @mdo </span></td>
-                        <td><span className="font-100">  @mdo </span></td>
-                        <td><span className="font-100">  @mdo </span></td>
-                        <td><span className="font-100">  @mdo </span></td>
-                        <td><span className="font-100">  @mdo </span></td>
-                 
-                    </tr> */}
+    
                     {holdings.map((stock, index)=>{
                         const currVal = stock.price * stock.qty; //the amount you hold
                         const profit =  currVal - stock.avg*stock.qty;
@@ -85,6 +109,8 @@ function Holdings() {
                 
             </tbody>
         </table>
+
+        
     </div>);
 }
 

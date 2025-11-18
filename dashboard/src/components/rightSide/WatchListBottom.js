@@ -4,7 +4,7 @@ import "./WatchListBottom.css";
 import { watchlist } from '../../data/data';
 import BuySellModels from './BuyModes/BuySellModals';
 import { useState } from 'react';
-
+import { LineChart } from '../graphs/LineChart';
 
 import HoverEffectHandler from './HoverEffectHandler';
 function WatchListBottom() {
@@ -16,20 +16,27 @@ function WatchListBottom() {
         setMouseEnter(null);
     }
 
+    const labels = watchlist.map((stock)=>stock["name"]);
+
+    const data = {
+    labels,
+    datasets: [
+        {
+        label: 'Price',
+        data: watchlist.map(stock=>stock["price"]),
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        },
+  
+    ],
+    };
+
 
     return (<>
-
-    {/* <div className="row watchlistbottomrow m-0 p-2 border-bottom">
-        <div className="col-4 p-0 color-green">infy</div>
-        <div className="col-8 p-0 text-end pe-1">
-            <span className="color-green">1.5%</span>
-            <span className="px-2 color-green"><ExpandLessIcon></ExpandLessIcon></span>
-            <span>1555.45</span>
-        </div>
-    </div> */}
+    
     {watchlist.map((stock, index)=>{
         const stockClass = stock.isDown? "color-red":"color-green";
-        return (
+        return (<>
         <div key={index} className="row watchlistbottomrow m-0 p-2 border-bottom" onMouseEnter={()=>{handleMouseEnter(index)}} onMouseLeave={()=>{handleMouseLeave(index)}}>
             <div className={`font-100 col-4 p-0 ${stockClass}`}>{stock.name}</div>
             <div className="col-8 p-0 text-end pe-1">
@@ -43,9 +50,20 @@ function WatchListBottom() {
             </div>
 
 
-        </div>)
+        </div>
+
+        
+
+        </>)
     })}
+
     <BuySellModels></BuySellModels>
+    <div className='container mt-5'>
+        <LineChart data={data} title={"Stock vs Price"}></LineChart>
+    </div>
+    
+
+    
     
 
 

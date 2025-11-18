@@ -60,12 +60,8 @@ function Topbar() {
                 <i class="fa-solid fa-user"></i>
               </Link>
               <ul className="dropdown-menu">
-                <li><Link className="dropdown-item" to="#">Action</Link></li>
-                <li><Link className="dropdown-item" to="#">Another action</Link></li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li><Link className="dropdown-item" to="#">Something else here</Link></li>
+                <li><Link className={`dropdown-item ${isActive("/userprofile") ? "color-red" : ""}`} to="/userprofile" onClick={closeOffcanvas}>View Profile</Link></li>
+                <li><Link className={`dropdown-item ${isActive("/editprofile") ? "color-red" : ""}`} to="/editprofile" onClick={closeOffcanvas}>Edit Profile</Link></li>
               </ul>
             </li>
           </ul>

@@ -4,9 +4,10 @@ import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 function Dashboard() {
     return ( <div className="container p-3">
         <h4 className="font-300">Hi, user !</h4>
-        <hr></hr>
-        <div className="">
-            <h5 className="font-300 pt-4 d-flex align-items-center gap-2"> <InfoOutlineIcon></InfoOutlineIcon> Equity</h5>
+        <hr className='mb-5'></hr>
+        <div className="d-flex gap-2">
+            <span className='d-flex align-items-center'><InfoOutlineIcon></InfoOutlineIcon></span>
+            <h4 className="font-300 d-inline"> Equity</h4>
 
         </div>
         <div className='row pt-3 ps-5'>
@@ -16,9 +17,10 @@ function Dashboard() {
                 <p className='m-0 font-300'>Opening balance <span>3.74k</span></p>
             </div>
         </div>
-        <hr className='my-4'></hr>
-        <div className="">
-            <h5 className="font-300 pt-4 -flex align-items-center gap-2"><WorkOutlineIcon/> Holdings</h5>
+        <hr className='my-5'></hr>
+        <div className="d-flex gap-2">
+            <span className='d-flex align-items-center'><WorkOutlineIcon></WorkOutlineIcon></span>
+            <h4 className="font-300 d-inline"> Holdings</h4>
 
         </div>
         <div className='row pt-3 ps-5'>
@@ -28,7 +30,7 @@ function Dashboard() {
                 <p className='m-0 font-300'>Investment: <span>29.88k</span></p>
             </div>
         </div>
-        <hr className='my-4'></hr>
+        <hr className='mt-4'></hr>
     </div> );
 }
 
