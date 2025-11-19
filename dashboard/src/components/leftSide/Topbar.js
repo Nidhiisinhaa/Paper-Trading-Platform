@@ -55,7 +55,10 @@ function Topbar() {
               <Link className={`nav-link ${isActive("/orders") ? "color-red" : ""}`} to="/orders" onClick={closeOffcanvas}>Orders</Link>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link ${isActive("/reports") ? "color-red" : ""}`} to="/report" onClick={closeOffcanvas}>Reports</Link>
+              <Link className={`nav-link ${isActive("/report") ? "color-red" : ""}`} to="/report" onClick={closeOffcanvas}>Reports</Link>
+            </li>
+            <li className="nav-item">
+              <Link className={`nav-link ${isActive("/guide") ? "color-red" : ""}`} to="/guide" onClick={closeOffcanvas}>Guide</Link>
             </li>
 
             <li className="nav-item dropdown">

@@ -1,6 +1,11 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link } from 'react-router-dom';
+import UserContext from '../../../contexts/UserContext/UserContext';
+import { useContext } from 'react';
 function UserProfile() {
+    
+    let {user} = useContext(UserContext);
+    // console.log(user)
     return ( <div className="container">
         <div className='d-flex  gap-2 align-items-center'>
 
@@ -17,9 +22,9 @@ function UserProfile() {
                     Username: <span>@johndoe</span>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Email : <span>johndoe@gmail.com</span></h5>
-                    <h5 class="card-title">Name : <span>John Doe</span></h5>
-                    <h5 class="card-title">funnds : <span>&#8377; 100000</span></h5>
+                    <h5 class="card-title">Email : <span>{user.email}</span></h5>
+                    <h5 class="card-title">Name : <span>{user.name}</span></h5>
+                    <h5 class="card-title">funnds : <span>&#8377; {user.funds.availableCash}</span></h5>
                     
                 </div>
                 </div>

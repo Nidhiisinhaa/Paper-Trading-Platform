@@ -1,4 +1,3 @@
-import { Link ,Route, Routes} from "react-router-dom";
 import Tradebook from "./Tradebook";
 import PnL from "./PnL";
 import { useState } from "react";

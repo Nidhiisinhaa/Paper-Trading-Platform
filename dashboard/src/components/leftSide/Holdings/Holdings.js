@@ -1,6 +1,7 @@
 import { holdings } from "../../../data/data";
 import {DoughnutChart} from  "../../graphs/Doughnut"
 import "./Holdings.css";
+import Pledge from "./PledgeDialog";
 function Holdings() {
     // console.log(holdings)
     const data = {
@@ -64,7 +65,7 @@ function Holdings() {
                         const dayLoss = stock.isLoss?"color-red":"color-green";
                         // console.log(stock)
                         return(
-                            <tr  key={index} onClick={()=>{console.log("clicked")}}>
+                            <tr className="cursor-pointer" key={index} onClick={()=>{console.log("clicked")}}  data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <td className="holding"><span className="font-100">  {stock.name} </span></td>
                                 <td className="holding"><span className="font-100">  {stock.qty} </span></td>
                                 <td className="holding"><span className="font-100">  {stock.avg.toFixed(2)} </span></td>
@@ -83,6 +84,7 @@ function Holdings() {
               
                 </tbody>
             </table>
+            <Pledge></Pledge>
         </div>
         <table class="table table-borderless">
             <thead>
