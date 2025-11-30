@@ -27,7 +27,15 @@ function RightSection() {
             <h5 class="card-title">TradeBot</h5>
             <p class="card-text">Experience Tradebot — an AI-powered trading assistant that understands both English and Hinglish. Get instant market insights, clear explanations, and smart guidance to make better trading decisions with speed, accuracy, and complete ease.</p>
             {/* <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> */}
-           <Link to={"/"} className="card-link text-decoration-none" style={{color:"#387ed1"}}>Try it <i className="fa-solid fa-arrow-right"></i></Link>
+           <a
+  href="http://localhost:3002"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="card-link text-decoration-none"
+  style={{ color: "#387ed1" }}
+>
+  Try it <i className="fa-solid fa-arrow-right"></i>
+</a>
         </div>
     </div>
     </> );
