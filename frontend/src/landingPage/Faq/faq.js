@@ -13,22 +13,23 @@ import {
   Typography,
 } from "@mui/material";
 
+import { useTheme } from "../../context/ThemeContext";
 import SearchIcon from "@mui/icons-material/Search";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import HelpIcon from "@mui/icons-material/Help";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
-
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export default function FAQs() {
   const [tab, setTab] = useState(0);
   const [search, setSearch] = useState("");
+  const { theme } = useTheme();
 
   const faqData = [
     {
       category: "Trading Basics",
-      icon: <TrendingUpIcon sx={{ color: "#1976d2" }} />,
+      icon: <TrendingUpIcon sx={{ color: "#c6d219ff" }} />,
       questions: [
         {
           q: "What is paper trading?",
@@ -159,12 +160,11 @@ export default function FAQs() {
   }));
 
   return (
-    <Box className="faq-page">
+
+    <Box className={`faq-page ${theme === "dark" ? "dark" : ""}`}>
+
       {/* HEADER */}
       <Typography className="faq-title"><b>Frequently Asked Questions</b></Typography>
-      <Typography className="faq-subtitle">
-        Your complete guide to trading, investing & paper trading
-      </Typography>
 
       {/* SEARCH BAR */}
       <Box className="faq-search-box">

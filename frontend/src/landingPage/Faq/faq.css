@@ -1,9 +1,11 @@
+
 .faq-page {
-  padding: 40px;
+  padding: 20px;
   min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
-/* Gradient Title */
+/* Title */
 .faq-title {
   text-align: center;
   font-size: 42px;
@@ -11,6 +13,7 @@
   margin-bottom: 10px;
 }
 
+/* Subtitle */
 .faq-subtitle {
   text-align: center;
   font-size: 18px;
@@ -27,6 +30,12 @@
 .faq-tabs .MuiTab-root {
   font-weight: 600 !important;
   text-transform: none !important;
+  transition: color 0.3s ease;
+}
+
+.faq-tabs .Mui-selected {
+  color: #387ed1 !important;
+  font-weight: 700 !important;
 }
 
 /* Accordion */
@@ -34,4 +43,82 @@
   margin-bottom: 12px;
   border-radius: 10px !important;
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Question text */
+.faq-question {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Answer text */
+.faq-answer {
+  font-size: 16px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+
+/* ===========================================
+   DARK THEME SUPPORT
+   When .dark class is added to .faq-page
+=========================================== */
+.faq-page.dark {
+  color: #ffffff !important;
+}
+
+/* Title + Subtitle */
+.faq-page.dark .faq-title,
+.faq-page.dark .faq-subtitle {
+  color: #ffffff !important;
+}
+
+/* Tabs */
+.faq-page.dark .MuiTab-root {
+  color: #e5e5e5 !important;
+}
+
+.faq-page.dark .Mui-selected {
+  color: #4ea8ff !important;
+}
+
+/* Tab Icons */
+.faq-page.dark .MuiTab-iconWrapper {
+  color: #ffffff !important;
+}
+
+/* Search Input */
+.faq-page.dark .MuiInputBase-input {
+  color: #ffffff !important;
+}
+
+.faq-page.dark .MuiInputBase-input::placeholder {
+  color: #bbbbbb !important;
+}
+
+/* Search field outline */
+.faq-page.dark fieldset {
+  border-color: #666 !important;
+}
+
+/* Accordion background */
+.faq-page.dark .faq-accordion {
+  background-color: #0f172a !important; /* deep blue-grey */
+  color: #ffffff !important;
+}
+
+/* Questions */
+.faq-page.dark .faq-question {
+  color: #ffffff !important;
+}
+
+/* Answers */
+.faq-page.dark .faq-answer {
+  color: #e8e8e8 !important;
+}
+
+/* Expand arrow */
+.faq-page.dark .MuiSvgIcon-root {
+  color: #ffffff !important;
 }
